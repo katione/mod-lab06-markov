@@ -27,7 +27,7 @@ TEST(TextGenTest, test3) {
     std::string filestring = "This is a test";
     textgen.text_file(1, filestring);
     std::string res = textgen.text_generation(3, time(0));
-    bool check = (res == "This is a ") || 
+    bool check = (res == "This is a ") ||
     (res == "is a test ") || (res == "a test ")
     || (res == "test ");
     ASSERT_TRUE(check);
