@@ -48,6 +48,6 @@ TEST(TextGenTest, test5) {
     };
     textgen.statetab = state;
     std::string res = textgen.text_generation(4, 1);
-    std::string exp = "I want eat apple "
+    std::string exp = "I want eat apple ";
     EXPECT_EQ(exp, res);
 }
