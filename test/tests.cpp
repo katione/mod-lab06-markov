@@ -23,13 +23,10 @@ TEST(TesxtGenTest, test2) {
 
 TEST(TextGenTest, test3) {
     Text_Gen textgen;
-    std::string filestring = "This is a test";
-    textgen.text_file(1, filestring);
+    std::string filestring = "Once I got stuck in an elevator";
+    textgen.text_file(2, filestring);
     std::string res = textgen.text_generation(3, time(0));
-    bool check = (res == "This is a ") ||
-    (res == "is a test ") || (res == "a test ")
-    || (res == "test ");
-    ASSERT_TRUE(check);
+    EXPECT_EQ(res, "Once I got ");
 }
 
 TEST(TextGenTest, test4) {
@@ -46,10 +43,11 @@ TEST(TextGenTest, test5) {
     typedef std::deque<std::string> prefix;
     std::map<prefix, std::vector<std::string>> state = {
         { { "I" }, { "want" } },
-        { { "want" }, { "eat", "sleep" } },
+        { { "want" }, { "sleep", "eat" } },
         { {"eat"}, {"apple"} }
     };
     textgen.statetab = state;
-    std::string res = textgen.text_generation(10, 20);
-    EXPECT_EQ("", res);
+    std::string res = textgen.text_generation(4, 1);
+    std::string exp = "I want eat apple "
+    EXPECT_EQ(exp, res);
 }
