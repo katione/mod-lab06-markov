@@ -21,7 +21,7 @@ int main() {
     text_gen.text_file(NPREF, str);
     std::string result = text_gen.text_generation(MAXGEN, time(0));
     std::ofstream out("outtext.txt");
-    std::out << result << std::endl;
+    out << result << std::endl;
     std::cout << result;
     return 0;
 }
