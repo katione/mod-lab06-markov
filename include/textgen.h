@@ -9,17 +9,15 @@
 #include <ctime>
 #include <vector>
 #pragma once
-using namespace std;
-
 
 class Text_Gen {
  public:
-	 typedef deque<string> prefix;
-	 prefix p_refix;
-	 prefix p_prefix;
-	 map<prefix, vector<string>> statetab;
-	 void text_file(int NPREF, string& file);
-	 string text_generation(int MAXGEN_lenght , int ti_me);
+    typedef std::deque<std::string> prefix;
+    prefix p_refix;
+    prefix p_prefix;
+    std::map<prefix, std::vector<std::string>> statetab;
+    void text_file(int NPREF, const std::string& file);
+    std::string text_generation(int MAXGEN_lenght , int ti_me);
 };
 
 #endif  // INCLUDE_TEXTGEN_H_
